@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>京都與大阪，十一天｜2026 秋</title>
+<meta name="description" content="2026/11/12–11/22 京都、大阪行程：每日時間表、交通、餐食與票券整理。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍁</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --paper:#EDF1EA; --card:#FAFCF8; --ink:#1B2A38; --muted:#586874; --rule:#C6D0C8;
+  --maple:#B5302A; --ginkgo:#C98A0E; --indigo:#27508C; --moss:#44735A;
+  --maple-soft:#F4DEDA; --indigo-soft:#DCE6F4; --ginkgo-soft:#F6EAC9; --moss-soft:#DCEBE0;
+  --display:"LXGW WenKai TC","BiauKai","DFKai-SB","Kaiti TC",serif;
+  --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme: dark;
+    --paper:#111921; --card:#18232D; --ink:#E6EDEF; --muted:#9BABB5; --rule:#2D3C48;
+    --maple:#F07A69; --ginkgo:#F0BC4C; --indigo:#86AEEA; --moss:#8BC7A0;
+    --maple-soft:#3A2220; --indigo-soft:#1D2C42; --ginkgo-soft:#3A3018; --moss-soft:#1D3327;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:6.5rem;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1rem;line-height:1.75;
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--ginkgo);outline-offset:2px;border-radius:4px}
+.wrap{max-width:52rem;margin:0 auto;padding:0 1.1rem}
+
+/* ---------- 車票式開頭 ---------- */
+.ticket{margin:1.4rem auto 1.6rem;background:var(--card);border:1.5px solid var(--ink);border-radius:14px;
+  display:grid;grid-template-columns:1fr;position:relative;overflow:hidden;
+  background-image:repeating-linear-gradient(135deg,transparent 0 11px,color-mix(in srgb,var(--moss) 9%,transparent) 11px 12px)}
+.ticket-main{padding:1.5rem 1.3rem 1.2rem}
+.ticket-dates{margin:0;color:var(--maple);font-weight:700;letter-spacing:.04em}
+.ticket h1{font-family:var(--display);font-weight:700;font-size:clamp(2.1rem,8.5vw,3.6rem);line-height:1.15;margin:.3rem 0 .7rem;letter-spacing:.02em}
+.ticket-main p.sub{margin:0;color:var(--muted);max-width:30em}
+.ticket-stub{border-top:2px dashed var(--ink);padding:1.1rem 1.3rem 1.3rem;display:grid;gap:.9rem;position:relative}
+.ticket-stub::before,.ticket-stub::after{content:"";position:absolute;top:-11px;width:20px;height:20px;border-radius:50%;
+  background:var(--paper);border:1.5px solid var(--ink)}
+.ticket-stub::before{left:-11px}.ticket-stub::after{right:-11px}
+.leg{display:grid;grid-template-columns:auto 1fr;column-gap:.9rem;align-items:baseline}
+.leg-tag{font-family:var(--display);font-weight:700;font-size:1.25rem;color:var(--card);background:var(--ink);
+  border-radius:6px;padding:0 .5rem;line-height:1.7}
+.leg-route{font-weight:700;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.leg-note{grid-column:2;color:var(--muted);font-size:.9rem}
+.stay{font-size:.92rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:.8rem}
+.stay b{color:var(--ink);font-weight:500}
+@media (min-width:46rem){
+  .ticket{grid-template-columns:1.25fr 1fr}
+  .ticket-main{padding:2rem 2rem 1.8rem}
+  .ticket-stub{border-top:0;border-left:2px dashed var(--ink);padding:2rem 1.6rem}
+  .ticket-stub::before{left:-11px;top:-11px}
+  .ticket-stub::after{left:-11px;right:auto;top:auto;bottom:-11px}
+}
+
+/* ---------- 路線圖導覽 ---------- */
+.line{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);
+  padding-top:env(safe-area-inset-top,0px)}
+.line ol{list-style:none;margin:0 auto;padding:.7rem 1.1rem .55rem;display:flex;max-width:60rem;overflow-x:auto;scrollbar-width:none}
+.line ol::-webkit-scrollbar{display:none}
+.st{flex:1 0 4.6rem;position:relative;text-align:center}
+.st::before{content:"";position:absolute;top:.5rem;left:0;right:0;height:4px;background:var(--c)}
+.st:first-child::before{left:50%}.st:last-child::before{right:50%}
+.st.k{--c:var(--maple)}.st.o{--c:var(--indigo)}.st.x{--c:var(--ink)}
+.st.x::before{background:linear-gradient(90deg,var(--maple) 50%,var(--indigo) 50%)}
+.st a{display:block;text-decoration:none;position:relative;padding-bottom:.1rem}
+.st .dot{display:block;width:1.15rem;height:1.15rem;margin:0 auto .3rem;border-radius:50%;background:var(--paper);
+  border:3px solid var(--c);position:relative;transition:transform .15s}
+.st.x .dot{border-color:var(--ink)}
+.st.on .dot{background:var(--c);transform:scale(1.25)}
+.st.x.on .dot{background:var(--ink)}
+.st-date{display:block;font-weight:700;font-size:.86rem;font-variant-numeric:tabular-nums;line-height:1.2}
+.st-name{display:block;font-size:.74rem;color:var(--muted);line-height:1.3;white-space:nowrap}
+.st.on .st-name{color:var(--ink)}
+.st.today .st-date::after{content:"今天";margin-left:.25rem;font-size:.68rem;background:var(--ginkgo);color:#1B2A38;border-radius:3px;padding:0 .25rem}
+
+/* ---------- 說明列 ---------- */
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin:1.2rem 0 0;padding:0;list-style:none;font-size:.88rem;color:var(--muted)}
+.legend li{display:flex;align-items:center;gap:.4rem}
+.legend i{width:.8rem;height:.8rem;border-radius:50%;display:inline-block}
+.note{margin:1rem 0 0;font-size:.9rem;color:var(--muted);border-left:3px solid var(--ginkgo);padding-left:.8rem}
+
+/* ---------- 每一天 ---------- */
+.day{padding:2.6rem 0 1rem;border-bottom:1px solid var(--rule)}
+.day.k{--c:var(--maple);--soft:var(--maple-soft)}
+.day.o{--c:var(--indigo);--soft:var(--indigo-soft)}
+.day-head{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1.1rem;align-items:start;margin-bottom:1.4rem}
+.day-date{font-family:var(--display);color:var(--c);line-height:1;text-align:center;border-right:3px solid var(--c);padding-right:1rem}
+.day-date .num{display:block;font-size:2.5rem;font-weight:700;font-variant-numeric:tabular-nums}
+.day-date .dow{display:block;font-size:1rem;margin-top:.35rem}
+.day-city{margin:0;font-size:.85rem;font-weight:700;color:var(--c)}
+.day h2{font-family:var(--display);font-size:1.6rem;line-height:1.3;margin:.1rem 0 .3rem;font-weight:700}
+.lead{margin:0;color:var(--muted);font-size:.95rem}
+
+.stops{list-style:none;margin:0;padding:0}
+.stop{display:grid;grid-template-columns:3.5rem 1.4rem 1fr;column-gap:.55rem;position:relative}
+.stop time{font-weight:700;font-variant-numeric:tabular-nums;font-size:.95rem;text-align:right;padding-top:.05rem;white-space:nowrap}
+.stop time small{display:block;font-weight:400;font-size:.7rem;color:var(--muted);line-height:1}
+.rail{position:relative}
+.rail::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;margin-left:-1px;background:var(--rule)}
+.stop:first-child .rail::before{top:.7rem}.stop:last-child .rail::before{bottom:calc(100% - .7rem)}
+.rail::after{content:"";position:absolute;left:50%;top:.42rem;width:.85rem;height:.85rem;margin-left:-.425rem;border-radius:50%;
+  background:var(--kc);box-shadow:0 0 0 3px var(--paper)}
+.k-move{--kc:var(--indigo)}.k-see{--kc:var(--maple)}.k-eat{--kc:var(--ginkgo)}.k-shop,.k-stay{--kc:var(--moss)}
+.stop-body{padding-bottom:1.25rem;min-width:0}
+.stop h3{margin:0;font-size:1.02rem;font-weight:700;line-height:1.55}
+.stop p{margin:.1rem 0 0;font-size:.93rem;color:var(--muted)}
+.stop p b{color:var(--ink);font-weight:700}
+.map{display:inline-block;margin-top:.3rem;font-size:.82rem;text-underline-offset:3px;color:var(--indigo)}
+
+.tt-wrap{overflow-x:auto;margin:.4rem 0 1.2rem;border:1px solid var(--rule);border-radius:8px;background:var(--card)}
+.tt-title{font-family:var(--display);font-size:1.2rem;margin:1.6rem 0 .2rem;font-weight:700}
+table{border-collapse:collapse;width:100%;font-size:.9rem;font-variant-numeric:tabular-nums}
+caption{text-align:left;padding:.6rem .8rem .3rem;font-weight:700}
+caption span{display:block;font-weight:400;color:var(--muted);font-size:.84rem}
+th,td{padding:.4rem .8rem;text-align:left;white-space:nowrap;border-top:1px solid var(--rule)}
+th{font-weight:500;color:var(--muted);font-size:.82rem}
+tr.pick td{background:var(--soft);font-weight:700}
+tr.pick td:first-child::before{content:"搭這班 ";font-size:.72rem;color:var(--c)}
+
+.meals{margin:.6rem 0 0;padding:.9rem 1rem;background:var(--ginkgo-soft);border-radius:8px;display:grid;gap:.35rem}
+.meals div{display:grid;grid-template-columns:1.9rem 1fr;gap:.6rem;font-size:.93rem}
+.meals dt{font-family:var(--display);font-weight:700;font-size:1.05rem;line-height:1.55}
+.meals dd{margin:0}
+.tips{margin:.9rem 0 0;padding:0 0 0 1.15rem;font-size:.92rem;color:var(--muted)}
+.tips li{margin:.25rem 0}
+.opts{display:grid;gap:.9rem;margin:0 0 1rem}
+.opt{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:8px;padding:.9rem 1rem}
+.opt h3{margin:0 0 .2rem;font-family:var(--display);font-size:1.15rem}
+.opt p{margin:.2rem 0 0;font-size:.93rem;color:var(--muted)}
+.opt p b{color:var(--ink)}
+
+/* ---------- 票券與確認 ---------- */
+.block{padding:2.6rem 0 1rem;border-bottom:1px solid var(--rule)}
+.block h2{font-family:var(--display);font-size:1.7rem;margin:0 0 .8rem}
+.facts{display:grid;gap:1rem;margin:0}
+.facts div{border-left:4px solid var(--indigo);padding-left:.9rem}
+.facts dt{font-weight:700}
+.facts dd{margin:.1rem 0 0;color:var(--muted);font-size:.94rem}
+.facts dd b{color:var(--ink)}
+.todo{list-style:none;margin:0;padding:0}
+.todo li{border-top:1px solid var(--rule)}
+.todo label{display:grid;grid-template-columns:1.6rem 1fr;gap:.5rem;padding:.7rem 0;cursor:pointer;font-size:.96rem}
+.todo input{width:1.15rem;height:1.15rem;margin:.3rem 0 0;accent-color:var(--moss)}
+.todo input:checked + span{color:var(--muted);text-decoration:line-through}
+.todo small{display:block;color:var(--muted);font-size:.85rem}
+footer{padding:1.6rem 0 3rem;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="ticket">
+    <div class="ticket-main">
+      <p class="ticket-dates">2026 年 11 月 12 日至 22 日</p>
+      <h1>京都與大阪，<br>十一天</h1>
+      <p class="sub">保津川遊船、延曆寺、貴船點燈、紅葉隧道、宇治與奈良，最後帶著行李換到大阪。</p>
+    </div>
+    <div class="ticket-stub">
+      <div class="leg">
+        <span class="leg-tag">去</span>
+        <span class="leg-route">JX820　桃園 07:40 起飛</span>
+        <span class="leg-note">11/12 抵達關西機場第一航廈，約 11:10（以機票為準）</span>
+      </div>
+      <div class="leg">
+        <span class="leg-tag">回</span>
+        <span class="leg-route">JX821　關西 12:20 → 桃園 14:35</span>
+        <span class="leg-note">11/22 關西機場第一航廈出發</span>
+      </div>
+      <p class="stay"><b>京都 4 晚</b>　Kyoto Toji Suites &amp; Residence（東寺旁），15:00 入住<br><b>大阪 6 晚</b>　西成區，天下茶屋站一帶</p>
+    </div>
+  </header>
+</div>
+
+<nav class="line" aria-label="每日行程"><ol id="nav"></ol></nav>
+
+<main class="wrap">
+  <ul class="legend" aria-label="圓點顏色說明">
+    <li><i style="background:var(--indigo)"></i>交通</li>
+    <li><i style="background:var(--maple)"></i>景點</li>
+    <li><i style="background:var(--ginkgo)"></i>吃</li>
+    <li><i style="background:var(--moss)"></i>逛街、住宿</li>
+  </ul>
+  <p class="note">11/14 的電車和巴士時間，取自叡山電車「紅葉休日」時刻表與京都巴士 33 號點燈特別班次。票價、營業時間、點燈期間都是大約值，出發前請再看官網。</p>
+
+  <div id="days"></div>
+
+  <section class="block" id="tickets">
+    <h2>票券與交通重點</h2>
+    <dl class="facts">
+      <div><dt>HARUKA（關西機場 → 京都）</dt><dd>票在 WEST QR 裡。入站前先照票券說明完成劃位，走有 QR 讀取的閘門。約 30 分鐘一班、車程約 80 分鐘，行李放車廂前後的行李架。</dd></div>
+      <div><dt>比叡山周遊券（11/14 用）</dt><dd>這天會搭叡山電車 4 趟、叡山纜車和空中纜車來回、山內接駁巴士來回，用一日券很划算。<b>要自己確認的三件事：</b>兌換地點和開始時間、貴船口到貴船的京都巴士有沒有包含（多半沒有）、延曆寺巡拜券是否有折扣。</dd></div>
+      <div><dt>ICOCA 或手機 Suica</dt><dd>JR、近鐵、京阪、地鐵、南海、巴士都能刷。先儲值 ¥5,000，其餘單程票都用它付。</dd></div>
+      <div><dt>京都飯店 ↔ 京都站</dt><dd>走路約 15 分鐘；或近鐵「東寺」站搭一站到京都。有大行李時搭計程車，八条口上下車，約 ¥1,000。</dd></div>
+      <div><dt>11/16 京都 → 大阪（帶 28 吋行李）</dt><dd><b>建議路線：</b>京都站搭 JR 新快速到大阪站（約 29 分鐘）→ 轉環狀線到新今宮（約 15 分鐘）→ 計程車到住宿（約 5 分鐘）。<b>少走樓梯的替代路線：</b>地鐵烏丸線到四条，轉阪急京都線，在淡路換堺筋線直達天下茶屋，全程約 75 分鐘，車資較便宜但要搬兩次行李。避開 17:30 以後的下班尖峰。</dd></div>
+      <div><dt>大阪市區</dt><dd>住宿附近的天下茶屋站有地鐵堺筋線和南海電鐵：往日本橋、天神橋筋不用轉車；到動物園前轉御堂筋線可到難波、心齋橋、梅田、天王寺。一天搭 4 趟以上地鐵時，買「Enjoy Eco Card」一日券比較省。</dd></div>
+      <div><dt>11/22 回程去機場</dt><dd>天下茶屋站搭南海電鐵「空港急行」直達關西機場，不用轉車，約 40 分鐘、約 ¥950。建議搭 08:45 前後的班次，09:30 到第一航廈，離 12:20 起飛還有將近 3 小時。想坐對號座就搭特急 Rapi:t（天下茶屋有停，要加特急費）。</dd></div>
+    </dl>
+  </section>
+
+  <section class="block" id="todo">
+    <h2>出發前要確認</h2>
+    <ul class="todo" id="todo-list"></ul>
+  </section>
+
+  <footer>
+    <p>行程中「明治」先當成「宇治」來排（和奈良在同一條 JR 奈良線上）。阿倍野 HARUKAS 排在 11/19 傍晚，門票若有指定日期，把那天和別天對調即可。</p>
+  </footer>
+</main>
+
+<script>
+const M = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+const HOTEL_K = "Kyoto Toji Suites & Residence, 104 Nishikujo Hieijocho, Kyoto";
+const HOTEL_O = "34.6394237,135.5007811";
+
+/* 每個停點：[時間, 類別, 標題, 說明, 地圖關鍵字] */
+const DAYS = [
+{ id:"d1", date:"11/12", dow:"四", city:"k", nav:"抵達", cityName:"京都",
+  title:"抵達京都，東寺周邊散步",
+  lead:"今天只安排走路就到的地方，飛機延誤也不怕。",
+  stops:[
+    ["07:40","move","桃園機場起飛 JX820","星宇航空，飛往關西機場第一航廈。05:30 前到機場比較安心。"],
+    ["11:10","move","抵達關西機場","日本時間，實際以機票為準。入境加領行李抓 60–75 分鐘，先填好 Visit Japan Web 會快很多。","関西国際空港 第1ターミナル"],
+    ["12:30","move","搭 HARUKA 到京都","出入境大廳後上 2 樓，過連通道到「關西空港站」的 JR 閘門。約 30 分鐘一班，車程約 80 分鐘。上車前在超商買飯糰或三明治先墊肚子。","関西空港駅"],
+    ["14:00","move","京都站到飯店","從八条口（南側）出站。帶著 28 吋行李，搭計程車最省事，約 5–7 分鐘、¥1,000 上下。走路約 15 分鐘。",HOTEL_K],
+    ["14:30","stay","寄行李或辦入住","15:00 才能入住，早到就先寄行李（出發前先問飯店）。"],
+    ["15:00","see","東寺","走路就到。五重塔是京都的地標，金堂和講堂大約 16:30 截止入場，所以先來這裡。","東寺 京都"],
+    ["16:30","eat","Aeon Mall KYOTO 吃飯、逛街","走路約 10 分鐘。美食街、餐廳、無印良品、藥妝都有，第一天不用跑遠。","イオンモールKYOTO"],
+    ["18:30","shop","逛 Life 超市","用地圖找離飯店最近的 Life（ライフ），順便買明後天的早餐和水。太遠的話，Aeon Mall 裡的超市也很好買。","ライフ スーパー 京都駅 南"],
+    ["19:30","see","東寺夜間點燈（有辦再去）","秋天通常有紅葉夜間特別參拜，大約 18:00–21:30，五重塔倒映在池面上。今年的期間和票價請看東寺官網。","東寺 京都"]
+  ],
+  meals:{b:"機場或機上",l:"HARUKA 上吃超商；或到京都站後去「京都拉麵小路」（京都站大樓 10 樓）",d:"Aeon Mall 餐廳街，或買超市熟食回飯店"}
+},
+{ id:"d2", date:"11/13", dow:"五", city:"k", nav:"嵐山", cityName:"京都",
+  title:"保津川遊船與嵐山",
+  lead:"平日去嵐山，人比週末少一截。遊船一定要先預約。",
+  stops:[
+    ["08:00","eat","早餐","昨晚超市買的，或京都站八条口「志津屋」的炸牛排三明治、火腿洋蔥麵包。"],
+    ["08:30","move","京都站 → 龜岡","JR 嵯峨野線（31–33 號月台），約 20–28 分鐘、約 ¥420，可刷 ICOCA。","亀岡駅"],
+    ["09:15","move","走到遊船乘船場","龜岡站北口出來走 8–10 分鐘。","保津川下り 乗船場"],
+    ["10:00","see","保津川遊船","順流約 2 小時到嵐山，兩岸正是紅葉。成人約 ¥6,000。水位或天氣不好會停航，當天早上先看官網公告。"],
+    ["12:15","eat","嵐山午餐","下船處就在渡月橋上游。「嵐山よしむら」蕎麥麵、「鯛匠 HANANA」鯛魚茶泡飯都要排隊，一下船先去抽號碼。","嵐山よしむら"],
+    ["13:30","see","天龍寺","曹源池庭園，紅葉襯著嵐山。逛完從北門出去，直接接竹林。","天龍寺"],
+    ["14:30","see","竹林小徑、野宮神社","往北一路走，可以接到常寂光寺。","嵐山 竹林の小径"],
+    ["15:15","see","常寂光寺","嵐山的賞楓名所，爬上去能俯瞰京都市區。約 17:00 關門。","常寂光寺"],
+    ["16:30","eat","渡月橋散步、點心","中村屋可樂餅、% ARABICA 咖啡。傍晚的渡月橋最好拍。","渡月橋"],
+    ["17:15","move","JR 嵯峨嵐山 → 京都","約 16 分鐘、約 ¥240。","嵯峨嵐山駅"],
+    ["18:00","eat","京都站晚餐","地下街 Porta 的「東洋亭」漢堡排、「京都勝牛」炸牛排，或伊勢丹 11 樓餐廳街。"],
+    ["20:00","shop","買明天的早餐","明天 7 點出門，飯糰、麵包和水先買好，早點睡。"]
+  ],
+  meals:{b:"超市早餐或志津屋",l:"嵐山よしむら、鯛匠 HANANA",d:"京都站 Porta 或伊勢丹餐廳街"},
+  tips:["遊船停航的備案：改搭嵯峨野觀光小火車（也要先訂票），或直接搭 JR 到嵯峨嵐山逛嵐山。","遊船上風大，帶圍巾和防風外套。"]
+},
+{ id:"d3", date:"11/14", dow:"六", city:"k", nav:"比叡山", cityName:"京都",
+  title:"延曆寺、貴船點燈、紅葉隧道",
+  lead:"用比叡山周遊券的一天。行程最滿，照著班次走就不會亂。",
+  stops:[
+    ["07:00","move","飯店 → 出町柳","近鐵東寺 → 京都（1 站）→ JR 奈良線 → 東福寺（1 站）→ 京阪 → 出町柳，約 45 分鐘。兩人以上可以直接搭計程車，約 20 分鐘、¥3,000 上下。","出町柳駅"],
+    ["07:50","move","兌換比叡山周遊券","照 Klook 憑證上寫的地點和時間換成實體票，先確認兌換處幾點開。"],
+    ["08:07","move","出町柳 → 八瀨比叡山口","08:21 到。沒趕上就搭 08:22 或 08:37。","八瀬比叡山口駅"],
+    ["09:00","move","叡山纜車、空中纜車上山","出站過橋走 3 分鐘到纜車站。首班時間請查官網，早到就排第一批。","ケーブル八瀬駅"],
+    ["09:30","move","山頂 → 延曆寺東塔","搭山內接駁巴士到「延曆寺巴士中心」。班次不多，下車時先拍下回程時刻表。"],
+    ["09:45","see","延曆寺東塔","根本中堂（整修中仍可參拜）、大講堂、阿彌陀堂、法華總持院東塔，紅葉也集中在這一區。山上比市區冷 5–6 度。","比叡山延暦寺 東塔"],
+    ["11:45","eat","山上午餐","東塔區的「鶴喜そば」蕎麥麵，或延曆寺會館的餐廳。"],
+    ["12:20","move","回山頂、搭纜車下山","接駁巴士回山頂，空中纜車和纜車原路下山。目標 13:15 前回到八瀨比叡山口站。"],
+    ["13:25","move","八瀨 → 寶池 → 貴船口","13:25 發車、13:30 到寶池，換月台搭 13:37 往鞍馬的車，<b>13:58 到貴船口</b>。","貴船口駅"],
+    ["14:02","move","京都巴士 33 號到貴船","白天的車只到「貴船臨時巴士站」，下車再往上走 300 公尺。備好零錢或 ICOCA。"],
+    ["14:30","see","貴船神社","本宮的紅燈籠石階和水占卜，再往上走到結社、奧宮，來回約 1 小時。","貴船神社"],
+    ["16:00","eat","喝茶休息、等天黑","找間茶屋或咖啡廳坐一下，日落大約 16:55。"],
+    ["16:45","see","貴船神社點燈","天剛黑、天空還帶一點藍的時候最好拍。點燈到 20:00 左右。","貴船神社"],
+    ["18:27","move","貴船 → 貴船口站","16:30 以後改在原本的「貴船」巴士站上車（神社這一側）。<b>18:10 就去排隊。</b>"],
+    ["18:44","move","貴船口 → 鞍馬（往回坐一站）","18:47 到鞍馬。在起點站排隊，才搶得到車頭位置。","鞍馬駅"],
+    ["18:59","see","鞍馬發車，穿過紅葉隧道","過了貴船口，二之瀨到市原之間就是點燈的紅葉隧道。站在駕駛座後面，從前窗拍。19:34 到出町柳。"],
+    ["19:45","move","出町柳 → 京都站","京阪到東福寺，轉 JR 一站。"],
+    ["20:30","eat","京都站晚餐","「京都拉麵小路」（京都站大樓 10 樓），大約開到 22:00。"]
+  ],
+  tables:[
+    {cap:"下午：八瀨比叡山口 → 貴船口", sub:"在寶池站換月台，轉搭往鞍馬的車",
+     head:["八瀨發","寶池到","寶池發","貴船口到"],
+     rows:[["13:25","13:30","13:37","13:58"],["13:38","13:43","13:50","14:11"],["13:48","13:53","14:03","14:24"],["14:04","14:09","14:16","14:37"]], pick:0},
+    {cap:"巴士：貴船口站 → 貴船（六、日）", sub:"14 點到 15 點的班次，車程約 5 分鐘",
+     head:["時","分"],
+     rows:[["14","02　08　15　21　28　34　41　47　54"],["15","00　07　13　20　26　33　39　46　52　59"]]},
+    {cap:"巴士：貴船 → 貴船口站（六、日晚上）", sub:"16:30 以後從「貴船」巴士站發車，末班 20:50",
+     head:["時","分"],
+     rows:[["17","02　09　15　22　28　35　41　48　54"],["18","01　07　14　20　27　33　40　46　53　59"],["19","06　12　19　25　35　45　55"],["20","05　15　25　35　50"]]},
+    {cap:"電車：貴船口 → 鞍馬（去起點站排隊）", sub:"只坐一站，3 分鐘",
+     head:["貴船口發","鞍馬到"],
+     rows:[["18:31","18:34"],["18:44","18:47"],["18:57","19:00"],["19:10","19:13"]], pick:1},
+    {cap:"電車：鞍馬 → 出町柳（經過紅葉隧道）", sub:"週末每 13 分鐘一班",
+     head:["鞍馬發","貴船口發","出町柳到"],
+     rows:[["18:33","18:36","19:08"],["18:46","18:49","19:21"],["18:59","19:02","19:34"],["19:12","19:15","19:47"],["19:25","19:28","20:00"],["19:38","19:41","20:13"]], pick:2}
+  ],
+  meals:{b:"前一晚買好的飯糰，在電車上吃",l:"延曆寺東塔的鶴喜蕎麥麵",d:"京都站拉麵小路"},
+  tips:["時間不夠時的取捨：纜車排太久就只逛東塔；最晚 15:30 到貴船口，都還趕得上點燈。","不想繞去鞍馬，就搭 18:33 的巴士，在貴船口直接搭 18:49 的車，19:21 到出町柳。","巴士時刻表註明塞車會誤點，紅葉季的週末請多留 10 分鐘。"]
+},
+{ id:"d4", date:"11/15", dow:"日", city:"k", nav:"宇治奈良", cityName:"京都出發",
+  title:"上午宇治，下午奈良",
+  lead:"兩地都在 JR 奈良線上，一路往南。回程搭近鐵，直接在飯店旁的東寺站下車。",
+  stops:[
+    ["07:45","eat","早餐","飯店吃或京都站買。"],
+    ["08:15","move","京都站 → 宇治","JR 奈良線（8–10 號月台）。「みやこ路快速」約 17 分鐘，普通車約 28 分鐘，約 ¥240。","宇治駅 JR"],
+    ["08:50","see","平等院","8:30 開門，早上人少。十圓硬幣上的鳳凰堂就在這裡，內部參觀要現場另外排時段。","平等院"],
+    ["10:00","eat","中村藤吉本店的抹茶甜點","10:00 開門，先抽號碼牌。不想等，就在平等院表參道吃抹茶霜淇淋。","中村藤吉本店"],
+    ["10:45","see","宇治橋、宇治川、宇治上神社","沿河散步過橋。宇治上神社是世界遺產，免費參拜。","宇治上神社"],
+    ["11:30","eat","宇治午餐","宇治橋旁「通圓」的茶蕎麥麵，或表參道上的抹茶蕎麥、抹茶咖哩。","通圓 宇治"],
+    ["12:30","move","宇治 → 奈良","JR 奈良線「みやこ路快速」約 30 分鐘，約 ¥510。","奈良駅 JR"],
+    ["13:10","move","JR 奈良站 → 奈良公園","搭市內循環巴士到「東大寺大佛殿・春日大社前」，或沿三条通邊逛邊走 25 分鐘。"],
+    ["13:30","eat","中谷堂的艾草麻糬","高速搗麻糬表演，現做的最好吃。","中谷堂 奈良"],
+    ["14:00","see","興福寺、奈良公園餵鹿","鹿仙貝約 ¥200。五重塔正在大整修，外面罩著工程帆布。紙袋和地圖收好，鹿會搶。","奈良公園"],
+    ["15:00","see","東大寺大佛殿","11 月起 17:00 關門。入口的南大門和金剛力士像別錯過。","東大寺 大仏殿"],
+    ["16:15","see","二月堂看夕陽","免費。從迴廊俯瞰奈良市區，日落約 16:50。","東大寺 二月堂"],
+    ["17:30","eat","奈良晚餐","東向商店街、もちいどの商店街一帶。釜飯「志津香」要排隊；累了也可以回京都再吃。","東向商店街"],
+    ["19:00","move","近鐵奈良 → 東寺","搭往京都的「急行」，東寺站有停（特急不停），約 45 分鐘、約 ¥760，下車走回飯店。","近鉄奈良駅"]
+  ],
+  meals:{b:"飯店或京都站",l:"宇治的茶蕎麥麵",d:"奈良東向商店街，或回京都"}
+},
+{ id:"d5", date:"11/16", dow:"一", city:"x", nav:"往大阪", cityName:"京都 → 大阪",
+  title:"下鴨神社，下午帶行李到大阪",
+  lead:"行李寄在飯店大廳（20:00 前要取），輕裝逛到下午再出發。",
+  stops:[
+    ["09:00","stay","退房、寄放行李","飯店已回覆可以放在大廳，當天 20:00 前取走。"],
+    ["09:30","move","飯店 → 下鴨神社","京都站 → JR 奈良線 → 東福寺 → 京阪 → 出町柳，再走 10 分鐘。或在京都站前搭市巴士 4 號、205 號到「下鴨神社前」。","下鴨神社"],
+    ["10:15","see","糺之森、河合神社、下鴨神社","糺之森的紅葉比市區晚，這時剛開始轉色。河合神社的鏡繪馬、御手洗社的水占卜都可以玩。","下鴨神社"],
+    ["11:15","eat","加茂みたらし茶屋","御手洗糰子的發源店，在神社西側。","加茂みたらし茶屋"],
+    ["11:45","see","鴨川三角洲","踩著烏龜石過河。附近「出町ふたば」的豆餅買來在河邊吃。","鴨川デルタ"],
+    ["12:15","move","出町柳 → 祇園四条","京阪約 6 分鐘，過四条大橋就是河原町。"],
+    ["12:30","eat","錦市場午餐、河原町逛街","錦市場邊走邊吃。新京極、寺町通、高島屋、大丸都在這一帶。","錦市場"],
+    ["14:45","move","回飯店拿行李","地鐵烏丸線「四条」→「京都」2 站，再回飯店。"],
+    ["15:45","move","京都 → 大阪","JR 新快速約 29 分鐘到大阪站，約 ¥580。自由座，行李靠車門邊放。","京都駅"],
+    ["16:30","move","大阪站 → 新今宮 → 住宿","轉環狀線到新今宮約 15 分鐘。從新今宮搭計程車到住宿最省力（約 5 分鐘、¥1,000 以內）；也可以轉南海電鐵一站到天下茶屋再走。",HOTEL_O],
+    ["17:30","stay","入住大阪住宿","從座標看，位在西成區、天下茶屋站東北側。最近車站請用地圖再確認一次。",HOTEL_O],
+    ["18:30","eat","新世界晚餐","離住宿很近（地鐵動物園前站）。串炸「だるま」「八重勝」，吃完看通天閣夜景。","新世界 通天閣"]
+  ],
+  meals:{b:"飯店或超市早餐",l:"錦市場邊走邊吃",d:"新世界串炸"},
+  tips:["17:30 以後是下班尖峰，帶大行李盡量在那之前到。"]
+},
+{ id:"d6", date:"11/17", dow:"二", city:"o", nav:"大阪城", cityName:"大阪",
+  title:"大阪城、黑門市場、道頓堀",
+  lead:"第一次來大阪必走的一條線，地鐵搭的次數多，適合買一日券。",
+  stops:[
+    ["08:30","eat","早餐","住宿附近喫茶店的早餐套餐，或超商。"],
+    ["09:00","move","天下茶屋 → 谷町四丁目","地鐵堺筋線到堺筋本町，轉中央線一站，約 20 分鐘。","谷町四丁目駅"],
+    ["09:30","see","大阪城公園、天守閣","護城河邊和西之丸庭園正是紅葉、銀杏的時候。登天守閣約 1 小時。","大阪城天守閣"],
+    ["12:00","eat","黑門市場午餐","中央線回堺筋本町，轉堺筋線到日本橋站。海鮮、和牛串、水果邊走邊吃，很多攤位 15:00 後開始收。","黒門市場"],
+    ["13:30","shop","道頓堀、心齋橋","固力果跑跑人、法善寺橫丁、心齋橋筋商店街、唐吉訶德、大丸、PARCO。","道頓堀 グリコサイン"],
+    ["16:30","eat","下午茶","「りくろーおじさん」現烤起司蛋糕（難波本店），或美國村的咖啡店。","りくろーおじさんの店 なんば本店"],
+    ["18:00","eat","道頓堀晚餐","大阪燒「美津の」（要排隊）、章魚燒「わなか」「くくる」，或拉麵。","美津の 道頓堀"],
+    ["20:00","move","回住宿","南海難波站搭到天下茶屋只要 2 站、約 5 分鐘。"]
+  ],
+  meals:{b:"喫茶店早餐套餐",l:"黑門市場",d:"道頓堀的大阪燒、章魚燒"}
+},
+{ id:"d7", date:"11/18", dow:"三", city:"o", nav:"箕面梅田", cityName:"大阪",
+  title:"箕面瀑布賞楓，下午梅田",
+  lead:"箕面的紅葉 11 月中下旬最盛，步道平緩，半天剛好。",
+  stops:[
+    ["08:30","move","天下茶屋 → 梅田 → 箕面","堺筋線到動物園前，轉御堂筋線到梅田。阪急寶塚線到石橋阪大前，轉箕面線到終點，阪急段約 30 分鐘。","箕面駅"],
+    ["10:00","see","箕面公園、箕面大瀑布","沿溪谷步道走到瀑布約 2.8 公里、45 分鐘。路上買一包炸楓葉（もみじの天ぷら）。","箕面大滝"],
+    ["12:30","eat","箕面午餐","步道沿途的茶屋，或回車站前吃。"],
+    ["14:00","shop","梅田逛街","阪急百貨、Grand Front Osaka、LUCUA、HEP FIVE。想看老屋咖啡店就走去中崎町。","グランフロント大阪"],
+    ["16:45","see","梅田藍天大廈空中庭園（可不去）","和阿倍野 HARUKAS 是不同方向的夜景，兩個選一個也可以。","梅田スカイビル 空中庭園展望台"],
+    ["18:30","eat","梅田晚餐","新梅田食道街、LUCUA 地下的餐廳街。大阪燒「きじ」在梅田藍天大廈地下的滝見小路。","新梅田食道街"],
+    ["20:30","move","回住宿","御堂筋線到動物園前，轉堺筋線到天下茶屋，約 25 分鐘。"]
+  ],
+  meals:{b:"住宿附近或梅田站麵包店",l:"箕面步道的茶屋",d:"梅田"}
+},
+{ id:"d8", date:"11/19", dow:"四", city:"o", nav:"HARUKAS", cityName:"大阪",
+  title:"住吉大社、天王寺、阿倍野 HARUKAS",
+  lead:"都在住宿附近，是比較鬆的一天。展望台抓日落前上去。",
+  stops:[
+    ["09:00","move","天下茶屋 → 住吉大社","南海本線普通車 3 站，約 6 分鐘。","住吉大社駅"],
+    ["09:15","see","住吉大社","紅色的太鼓橋和四座國寶本殿，是大阪人新年參拜的地方。","住吉大社"],
+    ["10:30","move","搭路面電車到天王寺","在「住吉鳥居前」搭阪堺電車到「天王寺駅前」，約 15 分鐘，一路穿過住宅區。"],
+    ["11:15","eat","天王寺午餐","阿倍野 HARUKAS 近鐵百貨 12–14 樓餐廳街、天王寺 MIO 或 Q’s Mall。","あべのハルカス"],
+    ["13:00","see","四天王寺","日本最早的官寺之一，從天王寺站走 12 分鐘。","四天王寺"],
+    ["14:30","shop","てんしば、阿倍野 Q’s Mall","在天王寺公園草地休息，或逛街。","てんしば"],
+    ["16:00","see","阿倍野 HARUKAS 300 展望台","從 16 樓換票，搭電梯到 60 樓。日落約 16:50，提早上去，白天、夕陽、夜景一次看完。","ハルカス300 展望台"],
+    ["18:30","eat","晚餐","天王寺站周邊，或走 15 分鐘到新世界再吃一次串炸。"],
+    ["20:00","move","回住宿","御堂筋線一站到動物園前，轉堺筋線一站到天下茶屋。"]
+  ],
+  meals:{b:"住宿附近",l:"HARUKAS 餐廳街",d:"天王寺或新世界"},
+  tips:["HARUKAS 門票如果有指定日期，把這一天和別天整天對調。"]
+},
+{ id:"d9", date:"11/20", dow:"五", city:"o", nav:"自由日", cityName:"大阪",
+  title:"自由日：三選一",
+  lead:"看體力和天氣決定。平日去環球影城或神戶，人都比週末少。",
+  opts:[
+    {name:"環球影城", lines:["<b>交通：</b>天下茶屋搭南海一站到新今宮，轉 JR 環狀線到西九条，再轉夢咲線到「ユニバーサルシティ」，約 30 分鐘。","門票和快速通關先買好，開園前 45 分鐘到。三餐都在園內解決。"]},
+    {name:"神戶一日", lines:["<b>交通：</b>南海到難波，在「大阪難波」站搭阪神電車直達神戶三宮，約 45 分鐘。","北野異人館 → 生田神社 → 午餐吃神戶牛（「ステーキランド」的午間套餐實惠）→ 南京町 → 美利堅公園 → Harborland 看夜景後回大阪。"]},
+    {name:"下雨的話：海遊館", lines:["<b>交通：</b>堺筋線到堺筋本町，轉中央線到「大阪港」，約 35 分鐘。","海遊館加天保山 Marketplace 半天，下午回難波逛地下街。"]}
+  ],
+  meals:{b:"住宿附近",l:"依方案",d:"依方案，或回難波吃"}
+},
+{ id:"d10", date:"11/21", dow:"六", city:"o", nav:"採買", cityName:"大阪",
+  title:"天神橋筋、中之島，最後採買",
+  lead:"週六避開熱門景點，逛商店街、補伴手禮，晚上早點回去整理行李。",
+  stops:[
+    ["09:30","eat","早餐","睡飽一點，住宿附近解決。"],
+    ["10:00","shop","天神橋筋商店街","日本最長的商店街。堺筋線直達「天神橋筋六丁目」，不用轉車。可樂餅「中村屋」、壽司「春駒」（要排隊）。","天神橋筋商店街"],
+    ["11:00","see","大阪生活今昔館（可不去）","天神橋筋六丁目站直通，重現江戶時代的街景。","大阪くらしの今昔館"],
+    ["12:00","eat","商店街午餐","壽司、烏龍麵、定食都有，價錢比難波親切。"],
+    ["14:00","see","中之島、御堂筋銀杏","從南森町走到中之島公園和中央公會堂。11 月下旬御堂筋的銀杏會轉黃。","大阪市中央公会堂"],
+    ["15:30","shop","難波、心齋橋最後採買","藥妝、唐吉訶德、高島屋地下街買伴手禮。「551 蓬萊」要冷藏，留到明天機場再買。","高島屋 大阪店"],
+    ["18:30","eat","最後一晚的晚餐","燒肉、壽司，或這幾天最想再吃一次的那家。"],
+    ["20:30","stay","回住宿整理行李","秤一下行李重量，液體和免稅品收進托運行李。"]
+  ],
+  meals:{b:"住宿附近",l:"天神橋筋商店街",d:"難波一帶"}
+},
+{ id:"d11", date:"11/22", dow:"日", city:"o", nav:"回家", cityName:"大阪 → 桃園",
+  title:"搭南海電鐵去機場，回台灣",
+  lead:"天下茶屋直達關西機場，不用轉車。",
+  stops:[
+    ["07:30","eat","早餐、退房","確認護照、手機、充電器。"],
+    ["08:20","move","住宿 → 天下茶屋站","有大行李可以叫計程車到車站。","天下茶屋駅"],
+    ["08:45","move","南海電鐵空港急行 → 關西機場","約 40 分鐘、約 ¥950，大約 15 分鐘一班，班次請看站內時刻表。想坐對號座就搭特急 Rapi:t（要加特急費）。","関西空港駅"],
+    ["09:30","move","第一航廈報到","車站過連通道就是第一航廈，國際線出發在 4 樓。","関西国際空港 第1ターミナル"],
+    ["10:15","shop","機場採買、吃午餐","過安檢後有免稅店和餐廳，「551 蓬萊」在這裡買。"],
+    ["12:20","move","JX821 起飛","14:35（台灣時間）抵達桃園機場第一航廈。"]
+  ],
+  meals:{b:"住宿附近或超商",l:"關西機場",d:"回家吃"}
+}
+];
+
+const TODO = [
+  ["問京都飯店：11/12 下午 3 點前能不能先寄行李","退房後寄放已經確認可以，入住前的還沒問。"],
+  ["預約 11/13 上午的保津川遊船","紅葉季很滿，官網可線上預約。"],
+  ["比叡山周遊券：兌換地點和時間","也確認貴船巴士有沒有包含、延曆寺門票有沒有折扣。"],
+  ["查叡山纜車的首班和末班時間","首班決定 11/14 早上幾點出門。"],
+  ["查貴船神社點燈時間、東寺夜間參拜期間",""],
+  ["確認阿倍野 HARUKAS 門票有沒有指定日期","有的話把 11/19 和那天對調。"],
+  ["HARUKA 車票在 WEST QR 裡完成劃位",""],
+  ["填好 Visit Japan Web",""],
+  ["確認大阪住宿的入住時間和最近車站",""],
+  ["手機 Suica 或 ICOCA 先儲值",""],
+  ["11/20 要去環球影城的話，先買門票",""]
+];
+
+/* ---------- 產生頁面 ---------- */
+const navEl = document.getElementById("nav");
+const daysEl = document.getElementById("days");
+
+navEl.innerHTML = DAYS.map(d =>
+  `<li class="st ${d.city}" data-id="${d.id}"><a href="#${d.id}"><span class="dot"></span><span class="st-date">${d.date}</span><span class="st-name">${d.nav}</span></a></li>`
+).join("");
+
+const stopHTML = s => {
+  const [t, kind, title, text, q] = s;
+  return `<li class="stop k-${kind}"><time>${t}</time><span class="rail"></span><div class="stop-body"><h3>${title}</h3>${text ? `<p>${text}</p>` : ""}${q ? `<a class="map" href="${M(q)}" target="_blank" rel="noopener">在地圖上看</a>` : ""}</div></li>`;
+};
+const tableHTML = t =>
+  `<div class="tt-wrap"><table><caption>${t.cap}<span>${t.sub || ""}</span></caption><thead><tr>${t.head.map(h => `<th scope="col">${h}</th>`).join("")}</tr></thead><tbody>${t.rows.map((r, i) => `<tr${t.pick === i ? ' class="pick"' : ""}>${r.map(c => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+
+daysEl.innerHTML = DAYS.map(d => {
+  const cls = d.city === "o" ? "o" : "k";
+  return `<section class="day ${cls}" id="${d.id}">
+    <header class="day-head">
+      <div class="day-date"><span class="num">${d.date}</span><span class="dow">星期${d.dow}</span></div>
+      <div><p class="day-city">${d.cityName}</p><h2>${d.title}</h2><p class="lead">${d.lead}</p></div>
+    </header>
+    ${d.opts ? `<div class="opts">${d.opts.map(o => `<div class="opt"><h3>${o.name}</h3>${o.lines.map(l => `<p>${l}</p>`).join("")}</div>`).join("")}</div>` : ""}
+    ${d.stops ? `<ol class="stops">${d.stops.map(stopHTML).join("")}</ol>` : ""}
+    ${d.tables ? `<h3 class="tt-title">這天要對的班次</h3>${d.tables.map(tableHTML).join("")}` : ""}
+    <dl class="meals"><div><dt>早</dt><dd>${d.meals.b}</dd></div><div><dt>午</dt><dd>${d.meals.l}</dd></div><div><dt>晚</dt><dd>${d.meals.d}</dd></div></dl>
+    ${d.tips ? `<ul class="tips">${d.tips.map(t => `<li>${t}</li>`).join("")}</ul>` : ""}
+  </section>`;
+}).join("");
+
+document.getElementById("todo-list").innerHTML = TODO.map(([a, b]) =>
+  `<li><label><input type="checkbox"><span>${a}${b ? `<small>${b}</small>` : ""}</span></label></li>`
+).join("");
+
+/* ---------- 導覽：目前看到哪一天、今天是哪一天 ---------- */
+const stations = [...navEl.querySelectorAll(".st")];
+const setOn = id => {
+  stations.forEach(s => {
+    const on = s.dataset.id === id;
+    s.classList.toggle("on", on);
+    if (on) navEl.scrollTo({ left: s.offsetLeft - navEl.clientWidth / 2 + s.clientWidth / 2, behavior: "smooth" });
+  });
+};
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) setOn(e.target.id); });
+  }, { rootMargin: "-25% 0px -65% 0px" });
+  document.querySelectorAll(".day").forEach(el => io.observe(el));
+}
+try {
+  const p = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Tokyo", year: "numeric", month: "numeric", day: "numeric" })
+    .formatToParts(new Date()).reduce((o, x) => (o[x.type] = x.value, o), {});
+  if (p.year === "2026") {
+    const today = DAYS.find(d => d.date === `${+p.month}/${+p.day}`);
+    if (today) {
+      navEl.querySelector(`[data-id="${today.id}"]`).classList.add("today");
+      if (!location.hash) document.getElementById(today.id).scrollIntoView();
+    }
+  }
+} catch (e) {}
+</script>
+</body>
+</html>
